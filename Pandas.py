@@ -20,7 +20,7 @@ df['Marks'] = df['Marks'].fillna(df['Marks'].median())
 
 df['City'] = df['City'].fillna("Unknown")
 
-df['Gender'] = df['Gender'].replace({"F":"Female","M":"Male"})
+df['Gender'] = df['Gender'].replace({"F":"Female"})
 
 df['City'] = df["City"].str.capitalize()
 
@@ -29,4 +29,5 @@ df['Marks'] = df['Marks'].apply(lambda x: 0 if x < 0 else x)
 scaler = MinMaxScaler()
 df[['Age', 'Marks']] = scaler.fit_transform(df[['Age', 'Marks']])
 
-print("Raw Data:\n", df)
+
+print("Processed Data:\n", df)
